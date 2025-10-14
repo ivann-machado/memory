@@ -1,0 +1,15 @@
+{
+    "name": "memory/app",
+    "autoload": {
+        "psr-4": {
+            "Memory\\App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ivann",
+            "email": "ivann.machado@laplateforme.io"
+        }
+    ],
+    "require": {}
+}
