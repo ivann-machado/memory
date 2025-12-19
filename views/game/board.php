@@ -26,15 +26,15 @@ if (!function_exists('formatTime')) {
 		<p><strong>Mouvements Totaux:</strong> <?= htmlspecialchars($board->getMoves()) ?></p>
 		<p><strong>Temps Écoulé:</strong> <span class="score-val-time"><?= formatTime($timeTaken) ?></span></p>
 		<p><strong>Score Calculé:</strong> <span class="score-val-calc"><?= number_format($finalScore, 2) ?></span></p>
-		<p class="mt-15">Votre score a été enregistré si vous êtes connecté. Consultez le <a href="/ranking" class="inline-link">Classement</a>!</p>
+		<p class="mt-15">Votre score a été enregistré si vous êtes connecté. Consultez le <a href="./ranking" class="inline-link">Classement</a>!</p>
 	</div>
 
 	<div class="mt-20">
-		<a href="/?new=1" class="reset-link primary">Nouvelle Partie</a>
+		<a href="./?new=1" class="reset-link primary">Nouvelle Partie</a>
 	</div>
 <?php else: ?>
 	<div class="mb-10">
-		<a href="/?new=1" class="reset-link">Recommencer la partie</a>
+		<a href="./?new=1" class="reset-link">Recommencer la partie</a>
 	</div>
 <?php endif; ?>
 <?php if ($isWaitingForClear): ?>
@@ -66,7 +66,7 @@ if (!function_exists('formatTime')) {
 
 		<div class="<?= implode(' ', $cardClasses) ?>">
 			<?php if ($isClickable): ?>
-				<form method="POST" action="/" class="card-form">
+				<form method="POST" action="./" class="card-form">
 					<?php if ($actionIsClear): ?>
 						<input type="hidden" name="clear_action" value="1">
 					<?php else: ?>

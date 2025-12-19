@@ -35,7 +35,7 @@ class GameController {
 			if (count($board->getFlippedCardIds()) === 2 && !$board->isGameOver()) {
 				$board->clearFlippedCards();
 				$_SESSION['board'] = $board;
-				header('Location: /');
+				header('Location: ./');
 				exit();
 			}
 		}
@@ -47,7 +47,7 @@ class GameController {
 			$this->flipCard((int)$_POST['card_id']);
 		}
 		else {
-			header('Location: /');
+			header('Location: ./');
 			exit();
 		}
 	}
@@ -60,7 +60,7 @@ class GameController {
 		$board = new Board($pairsCount, $values);
 		$_SESSION['board'] = $board;
 
-		header('Location: /');
+		header('Location: ./');
 		exit();
 	}
 
@@ -68,7 +68,7 @@ class GameController {
 		$board = $_SESSION['board'];
 
 		if (count($board->getFlippedCardIds()) === 2) {
-			header('Location: /');
+			header('Location: ./');
 			exit();
 		}
 
@@ -79,7 +79,7 @@ class GameController {
 			$this->saveScore($board);
 		}
 
-		header('Location: /');
+		header('Location: ./');
 		exit();
 	}
 
@@ -96,7 +96,7 @@ class GameController {
 	public function resetGame() {
 		unset($_SESSION['board']);
 		unset($_SESSION['calculated_score']);
-		header('Location: /');
+		header('Location: ./');
 		exit();
 	}
 

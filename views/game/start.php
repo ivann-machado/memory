@@ -1,5 +1,5 @@
 <h2>Nouvelle Partie</h2>
-<form method="POST" action="/">
+<form method="POST" action="./">
 	<label for="pairs">Nombre de paires (<?= Controller\GameController::MIN_PAIRS ?>-<?= Controller\GameController::MAX_PAIRS ?>):</label>
 	<input type="number" id="pairs" name="pairs"
 	min="<?= Controller\GameController::MIN_PAIRS ?>"

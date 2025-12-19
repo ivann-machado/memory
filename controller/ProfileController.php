@@ -10,7 +10,7 @@ class ProfileController {
 	public function index() {
 		if (!User::isLoggedIn()) {
 			$_SESSION['error_message'] = "Vous devez être connecté pour accéder à votre profil.";
-			header('Location: /login');
+			header('Location: ./login');
 			exit();
 		}
 

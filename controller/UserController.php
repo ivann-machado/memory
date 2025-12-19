@@ -8,7 +8,7 @@ class UserController {
 
 	public function login() {
 		if (User::isLoggedIn()) {
-			header('Location: /profile');
+			header('Location: ./profile');
 			exit();
 		}
 
@@ -20,17 +20,17 @@ class UserController {
 		if (isset($_POST['login'], $_POST['password'])) {
 			try {
 				if(User::logIn($_POST['login'], $_POST['password'])) {
-					header('Location: /');
+					header('Location: ./');
 					exit();
 				}
 				else {
 					$_SESSION['error_message'] = "Identifiants invalides.";
-					header('Location: /login');
+					header('Location: ./login');
 					exit();
 				}
 			} catch (\Exception $e) {
 				$_SESSION['error_message'] = "Erreur de connexion: " . $e->getMessage();
-				header('Location: /login');
+				header('Location: ./login');
 				exit();
 			}
 		}
@@ -38,7 +38,7 @@ class UserController {
 
 	public function signup() {
 		if (User::isLoggedIn()) {
-			header('Location: /profile');
+			header('Location: ./profile');
 			exit();
 		}
 
@@ -55,11 +55,11 @@ class UserController {
 
 			if (User::signUp($data)) {
 				$_SESSION['score_message'] = "Inscription réussie! Veuillez vous connecter.";
-				header('Location: /login');
+				header('Location: ./login');
 				exit();
 			} else {
 				$_SESSION['error_message'] = "Erreur lors de l'inscription (pseudo déjà pris ?).";
-				header('Location: /signup');
+				header('Location: ./signup');
 				exit();
 			}
 		}
@@ -67,7 +67,7 @@ class UserController {
 
 	public function logoff() {
 		User::logOff();
-		header('Location: /');
+		header('Location: ./');
 		exit();
 	}
 }
