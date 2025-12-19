@@ -396,3 +396,14 @@ th.score-header {
 	color: var(--primary-color);
 	text-align: center;
 }
+
+.profile-info {
+	margin-bottom: 30px;
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	background-color: #e9ecef;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}

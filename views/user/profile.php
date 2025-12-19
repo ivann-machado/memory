@@ -1,6 +1,6 @@
 <h2>Mon Profil : <?= htmlspecialchars($user->getUsername() ?? 'Utilisateur Inconnu') ?></h2>
 
-<div style="margin-bottom: 30px; padding: 15px; border: 1px solid #ccc; border-radius: 8px; background-color: #e9ecef; display: flex; flex-direction: column; gap: 10px;">
+<div class="profile-info">
 	<p><strong>Nom d'utilisateur:</strong> <?= htmlspecialchars($user->getUsername() ?? 'Non renseigné') ?></p>
 </div>
 
