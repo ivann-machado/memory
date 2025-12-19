@@ -1,0 +1,31 @@
+# public/.htaccess
+
+# --- General Configuration ---
+
+# Turn on the Rewrite Engine
+RewriteEngine On
+
+# Set the base directory for the rewrite rules
+# Since this file is in the 'public' folder, we set the base to the root
+# of the web path.
+RewriteBase /
+
+# --- Routing Rules ---
+
+# Rule 1: Prevent direct access to files that are not explicitly index.php
+# This is usually done to protect configuration or other files if placed here,
+# though in your structure, only index.php and assets should be here.
+
+# Rule 2: Redirect all requests that are NOT for an existing file or directory
+# to the index.php file.
+# This ensures that URLs like /ranking or /profile are passed to index.php
+# for the Router to handle.
+
+# Check if the requested file is NOT a real file on the server
+RewriteCond %{REQUEST_FILENAME} !-f
+# Check if the requested file is NOT a real directory on the server
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# If neither is true, rewrite the URL internally to index.php
+# The [L] flag means this is the last rule to be applied if matched.
+RewriteRule ^(.*)$ index.php [QSA,L]

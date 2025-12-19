@@ -2,7 +2,9 @@
     "name": "memory/app",
     "autoload": {
         "psr-4": {
-            "Memory\\App\\": "src/"
+            "Memory\\App\\": "src/",
+            "Core\\": "core/",
+            "Controller\\": "controller/"
         }
     },
     "authors": [
