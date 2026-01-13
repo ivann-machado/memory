@@ -43,4 +43,4 @@ if (empty($allRankings)): ?>
 		</div>
 	<?php endforeach; ?>
 <?php endif; ?>
-<a href="/" class="reset-link">Retour au Jeu</a>
+<a href="./" class="reset-link">Retour au Jeu</a>
